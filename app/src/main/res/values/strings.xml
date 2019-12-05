@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LoginDemo</string>
+    <string name="login">Login</string>
+    <string name="this_is_second_activity">This is second activity</string>
+    <string name="no_of_incorrect_attempts">No of incorrect attempts:</string>
+    <string name="no_of_attempts_remaining">No of attempts remaining:</string>
+    <string name="admin_ferrum_edu">admin@ferrum.edu</string>
+</resources>
