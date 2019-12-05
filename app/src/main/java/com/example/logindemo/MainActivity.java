@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, SecondActivity.class);
             startActivity(intent);
         }else{
-            counter--;
             Info.setText("No of attempts remaining: " + String.valueOf(counter));
 
             if(counter==0){
