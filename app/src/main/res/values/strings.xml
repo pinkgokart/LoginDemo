@@ -14,13 +14,9 @@
     <string name="swipes_left">Swipes Left</string>
     <string name="dining_dollars">Dining Dollars:</string>
     <string name="dining_dollars_left">Dining Dollars Left</string>
+    <string name="dark_mode">Dark Mode</string>
     <string name="events_timeline">Events Timeline</string>
     <string name="logout">Logout</string>
     <string name="today">Today</string>
     <string name="this_week">This Week</string>
-    <string name="home">Home</string>
-    <string name="search">Search</string>
-    <string name="events">Events</string>
-    <string name="pages">Pages</string>
-    <string name="profile">Profile</string>
 </resources>
