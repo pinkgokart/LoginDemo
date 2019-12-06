@@ -14,4 +14,11 @@
     <string name="this_week">This Week</string>
     <string name="btl_logout">Logout</string>
     <string name="design">design</string>
+    <string name="event_name">Event Name</string>
+    <string name="date_time"><![CDATA[Date & Time]]></string>
+    <string name="date_time2">Datetime</string>
+    <string name="godsaveme">TESTETEST</string>
+    <string name="location">Location</string>
+    <string name="rsvp">RSVP</string>
+    <string name="club_name">Club Name</string>
 </resources>
