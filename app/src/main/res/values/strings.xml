@@ -8,7 +8,16 @@
     <string name="welcome_to_panther_talks">Welcome to Panther Talks!</string>
     <string name="ferrum_email">Ferrum Email:</string>
     <string name="password">Password:</string>
+    <string name="meal_swipes">Meal Swipes:</string>
     <string name="first_last">First Last</string>
     <string name="panther_talks">Panther Talks</string>
-    <string name="meal_swipes">Meal Swipes:</string>
+    <string name="swipes_left">Swipes Left</string>
+    <string name="dining_dollars">Dining Dollars:</string>
+    <string name="dining_dollars_left">Dining Dollars Left</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="events_timeline">Events Timeline</string>
+    <string name="logout">Logout</string>
+    <string name="today">Today</string>
+    <string name="this_week">This Week</string>
 </resources>
