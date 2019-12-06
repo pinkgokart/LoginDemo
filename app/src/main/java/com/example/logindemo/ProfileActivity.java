@@ -17,6 +17,7 @@ public class ProfileActivity extends AppCompatActivity {
     private Button Pages;
     private Button Home;
     private Button Events;
+    private Button Logout;
 
 
     @Override
@@ -30,6 +31,7 @@ public class ProfileActivity extends AppCompatActivity {
         Pages =(Button)findViewById(R.id.btnpages);
         Home =(Button)findViewById(R.id.btnhome);
         Events =(Button)findViewById(R.id.btnevents);
+        Logout = (Button)findViewById(R.id.btnlogout);
 
         Search.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -59,8 +61,14 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-        SwipeLeft.setText("Meal Swipes Left: " + 5);
-        DDLeft.setText("Dining Dollars Left: $" + 100);
+        Logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMainActivity();
+            }
+        });
+
+
     }
 
     public void openSearchActivity() {
@@ -80,6 +88,11 @@ public class ProfileActivity extends AppCompatActivity {
 
     public void openEventsActivity() {
         Intent intent = new Intent(this, EventsActivity.class);
+        startActivity(intent);
+    }
+
+    public void openMainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }
