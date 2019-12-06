@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         Login =(Button)findViewById(R.id.btnLogin);
         loadingbar = new ProgressDialog(this);
 
-        Info.setText("No of attempts remaining: 5");
+     //   Info.setText("No of attempts remaining: 5");
 
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
         }else if(TextUtils.isEmpty(userPassword)){
             Toast.makeText(  this, "please write your Password....", Toast.LENGTH_SHORT).show();
         }else{
-            loadingbar.setTitle("Creating New Account");
-            loadingbar.setMessage("Please wait, While we are creating your account");
+            loadingbar.setTitle("Login");
+            loadingbar.setMessage("Please wait, While we are Logging you in");
             loadingbar.show();
             loadingbar.setCanceledOnTouchOutside(true);
 
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 }
-            })
+            });
         }
 
         /*if((userName.equals("admin@ferrum.edu"))&&(userPassword.equals("1234"))){
@@ -98,10 +98,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     private void SendUserToHomeActivity() {
-        Intent HomeIntent = new Intent(MainActivity.this, HomeActivity.class);
-        HomeIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(HomeIntent);
+        Intent homeIntent = new Intent(MainActivity.this, HomeActivity.class);
+        homeIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(homeIntent);
         finish();
     }
 }
