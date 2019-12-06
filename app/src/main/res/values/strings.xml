@@ -8,4 +8,8 @@
     <string name="welcome_to_panther_talks">Welcome to Panther Talks!</string>
     <string name="ferrum_email">Ferrum Email:</string>
     <string name="password">Password:</string>
+    <string name="name_of_event">Name of event:</string>
+    <string name="dude">dude</string>
+    <string name="dude2">dude2</string>
+    <string name="btn_dude">dudeee</string>
 </resources>
