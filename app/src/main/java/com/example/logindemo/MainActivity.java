@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void validate(String userName, String userPassword){
         if((userName.equals("admin@ferrum.edu"))&&(userPassword.equals("1234"))){
-            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+            Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
             startActivity(intent);
         }else{
             Info.setText("No of attempts remaining: " + String.valueOf(counter));
