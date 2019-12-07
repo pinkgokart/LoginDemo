@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "220122155355",
+    "firebase_url": "https://panthertalk-c919e.firebaseio.com",
+    "project_id": "panthertalk-c919e",
+    "storage_bucket": "panthertalk-c919e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:220122155355:android:f8ef3ee9c45fb7c61f327e",
+        "android_client_info": {
+          "package_name": "com.example.logindemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "220122155355-de6ee6v3qd7ahopo07ala4g1qltrut4v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.logindemo",
+            "certificate_hash": "9a2961071cddf01c740cc1f7de0397b6127bebd5"
+          }
+        },
+        {
+          "client_id": "220122155355-9amk9a9h3glv5urmbmqo46fga6tsu8hm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBY99QpivVDay5zoJ6aXVaLik5vt9jq868"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "220122155355-9amk9a9h3glv5urmbmqo46fga6tsu8hm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

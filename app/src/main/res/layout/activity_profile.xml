@@ -109,7 +109,7 @@
         tools:srcCompat="@tools:sample/avatars[2]" />
 
     <Button
-        android:id="@+id/btnsearch"
+        android:id="@+id/btncancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#fdca2e"
@@ -164,8 +164,9 @@
         android:id="@+id/btnprofile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#fdca2e"
+        android:background="#000000"
         android:text="@string/profile"
+        android:textColor="#fdca2e"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
