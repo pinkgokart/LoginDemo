@@ -4,9 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +27,7 @@ public class HomeActivity extends AppCompatActivity {
     private Button Home;
     private Button Profile;
     private Button Logout;
+    private ImageButton AddnewPostButton;
     private TextView Name;
     private FirebaseAuth mAuth;
     private DatabaseReference UsersRef;
@@ -49,6 +52,9 @@ public class HomeActivity extends AppCompatActivity {
         Home = (Button) findViewById(R.id.btnhome);
         Profile = (Button) findViewById(R.id.btnprofile);
         Logout = (Button) findViewById(R.id.btnlogout);
+        AddnewPostButton = (ImageButton) findViewById(R.id.Btn_Post);
+
+
 
 
         UsersRef.child(currentUserId).addValueEventListener(new ValueEventListener() {
@@ -71,9 +77,23 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        AddnewPostButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SendUserToPost();
+            }
+        });
+
+
 }
 
-        public void openSearchActivity() {
+    private void SendUserToPost() {
+        Intent postintent = new Intent(HomeActivity.this, postActivity.class);
+        startActivity(postintent);
+
+    }
+
+    public void openSearchActivity() {
             Intent intent = new Intent(HomeActivity.this, SearchActivity.class);
             startActivity(intent);
         }
