@@ -19,11 +19,13 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText Name;
     private EditText Password;
-    private TextView Info;
+    private TextView NewUserAccount;
     private Button Login;
     private ProgressDialog loadingbar;
    // private int counter=5;
@@ -37,13 +39,22 @@ public class MainActivity extends AppCompatActivity {
 
         mAuth=FirebaseAuth.getInstance();
 
+        NewUserAccount = (TextView) findViewById(R.id.Reg_Acc_link);
+
+
         Name =(EditText)findViewById(R.id.login_email);
         Password =(EditText)findViewById(R.id.login_pwd);
-        Info =(TextView)findViewById(R.id.Reg_Acc_link);
+        NewUserAccount =(TextView)findViewById(R.id.Reg_Acc_link);
         Login =(Button)findViewById(R.id.btnLogin);
         loadingbar = new ProgressDialog(this);
 
-     //   Info.setText("No of attempts remaining: 5");
+
+        NewUserAccount.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                SendUserToRegActivity();
+            }
+        });
 
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +62,11 @@ public class MainActivity extends AppCompatActivity {
                 validate(Name.getText().toString(), Password.getText().toString());
             }
         });
+    }
+
+    private void SendUserToRegActivity() {
+        Intent regIntent = new Intent(MainActivity.this, RegActivity.class);
+        regIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
     }
 
 
