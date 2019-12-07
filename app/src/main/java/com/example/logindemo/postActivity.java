@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.ActivityChooserModel;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
@@ -19,8 +20,7 @@ public class postActivity extends AppCompatActivity {
     private EditText PostDescription;
 
     private static int Gallery_Pick;
-    private Uri ImageUri;
-
+    private Uri imageUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +53,8 @@ public class postActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if(requestCode == Gallery_Pick && resultCode == RESULT_OK && data!=null){
-            ImageUri
+            imageUri = data.getData();
+            SelectPostImage.setImageURI(imageUri);
         }
 
     }
