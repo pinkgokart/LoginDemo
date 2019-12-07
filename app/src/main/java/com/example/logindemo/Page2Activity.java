@@ -21,7 +21,7 @@ public class Page2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page2);
 
-        Search = (Button)findViewById(R.id.btnsearch);
+        Search = (Button)findViewById(R.id.Btn_search);
         Pages = (Button)findViewById(R.id.btnpages);
         Home = (Button)findViewById(R.id.btnhome);
         Events = (Button)findViewById(R.id.btnevents);

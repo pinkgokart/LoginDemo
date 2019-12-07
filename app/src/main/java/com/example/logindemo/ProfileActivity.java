@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 public class ProfileActivity extends AppCompatActivity {
@@ -27,7 +26,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         SwipeLeft =(TextView)findViewById(R.id.tvswipesleft);
         DDLeft =(TextView)findViewById(R.id.tvdiningdollarsleft);
-        Search =(Button)findViewById(R.id.btnsearch);
+        Search =(Button)findViewById(R.id.Btn_search);
         Pages =(Button)findViewById(R.id.btnpages);
         Home =(Button)findViewById(R.id.btnhome);
         Events =(Button)findViewById(R.id.btnevents);
