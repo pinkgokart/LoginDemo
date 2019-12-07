@@ -6,33 +6,29 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
-public class ProfileActivity extends AppCompatActivity {
+public class Page2Activity extends AppCompatActivity {
 
-    private TextView SwipeLeft;
-    private TextView DDLeft;
     private Button Search;
     private Button Pages;
     private Button Home;
     private Button Events;
+    private Button Profile;
     private Button Logout;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_page2);
 
-        SwipeLeft =(TextView)findViewById(R.id.tvswipesleft);
-        DDLeft =(TextView)findViewById(R.id.tvdiningdollarsleft);
-        Search =(Button)findViewById(R.id.Btn_search);
-        Pages =(Button)findViewById(R.id.btnpages);
-        Home =(Button)findViewById(R.id.btnhome);
-        Events =(Button)findViewById(R.id.btnevents);
+        Search = (Button)findViewById(R.id.Btn_search);
+        Pages = (Button)findViewById(R.id.btnpages);
+        Home = (Button)findViewById(R.id.btnhome);
+        Events = (Button)findViewById(R.id.btnevents);
+        Profile = (Button)findViewById(R.id.btnprofile);
         Logout = (Button)findViewById(R.id.btnlogout);
 
-        Search.setOnClickListener(new View.OnClickListener(){
+        Search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openSearchActivity();
@@ -60,14 +56,19 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+        Profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openProfileActivity();
+            }
+        });
+
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openMainActivity();
             }
         });
-
-
     }
 
     public void openSearchActivity() {
@@ -90,8 +91,14 @@ public class ProfileActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openProfileActivity() {
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+
     public void openMainActivity() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+
 }
