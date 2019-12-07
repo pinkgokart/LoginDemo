@@ -17,7 +17,6 @@
         <activity android:name=".SetupActivity" />
         <activity android:name=".RegActivity" />
         <activity android:name=".CreateEventsActivity" />
-        <activity android:name=".CreatePostActivity" />
         <activity android:name=".Page2Activity" />
         <activity android:name=".Page1Activity" />
         <activity android:name=".MessagesActivity" />
