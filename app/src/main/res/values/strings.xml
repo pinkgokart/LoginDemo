@@ -43,4 +43,8 @@
     <string name="fgk">FGK</string>
     <string name="kys">KYS</string>
     <string name="delta_love">DeltaLove</string>
+    <string name="txtV_suggest">Suggested Pages:</string>
+    <string name="txtV_pfollow">Pages You Follow:</string>
+    <string name="img_profile" />
+    <string name="txtV_msg">MESSAGES</string>
 </resources>

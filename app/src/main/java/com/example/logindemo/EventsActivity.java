@@ -14,6 +14,8 @@ public class EventsActivity extends AppCompatActivity {
     private Button Home;
     private Button Profile;
     private Button Logout;
+    private Button Cancel;
+    private Button Create;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,8 @@ public class EventsActivity extends AppCompatActivity {
         Home = (Button)findViewById(R.id.btnhome);
         Profile = (Button)findViewById(R.id.btnprofile);
         Logout = (Button)findViewById(R.id.btnlogout);
+        Cancel = (Button)findViewById(R.id.btncancel);
+        Create = (Button)findViewById(R.id.btncreate);
 
         Search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +65,20 @@ public class EventsActivity extends AppCompatActivity {
             }
         });
 
+        Cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openEventsActivity();
+            }
+        });
+
+        Create.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
     }
 
     public void openSearchActivity() {
@@ -85,6 +103,11 @@ public class EventsActivity extends AppCompatActivity {
 
     public void openMainActivity() {
         Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void openEventsActivity() {
+        Intent intent = new Intent(this, EventsActivity.class);
         startActivity(intent);
     }
 
