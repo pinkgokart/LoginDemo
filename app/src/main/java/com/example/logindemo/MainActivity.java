@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
         Name =(EditText)findViewById(R.id.login_email);
         Password =(EditText)findViewById(R.id.login_pwd);
-        NewUserAccount =(TextView)findViewById(R.id.Reg_Acc_link);
         Login =(Button)findViewById(R.id.btnLogin);
         loadingbar = new ProgressDialog(this);
 
@@ -64,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void SendUserToRegActivity() {
         Intent regIntent = new Intent(MainActivity.this, RegActivity.class);
-        regIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(regIntent);
     }
 
 
