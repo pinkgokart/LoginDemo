@@ -98,7 +98,7 @@ public class postActivity extends AppCompatActivity {
 
         postRandomName = saveCurrentDate + saveCurrentTime;
 
-        StorageReference filepath =
+        StorageReference filepath;
 
 
 
