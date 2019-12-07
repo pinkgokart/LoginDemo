@@ -31,111 +31,70 @@ public class HomeActivity extends AppCompatActivity {
 
     String currentUserId;
 
-       @Override
-        protected void onCreate (Bundle savedInstanceState){
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
 
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_home);
-
-
-
-            mAuth = FirebaseAuth.getInstance();
-            currentUserId = mAuth.getCurrentUser().getUid();
-           UsersRef = FirebaseDatabase.getInstance().getReference().child("Users");
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_home);
 
 
-           Name = (TextView) findViewById((R.id.Txt_Name));
-            Search = (Button) findViewById(R.id.Btn_search);
-            Pages = (Button) findViewById(R.id.btnpages);
-            Home = (Button) findViewById(R.id.btnhome);
-            Profile = (Button) findViewById(R.id.btnprofile);
-            Logout = (Button) findViewById(R.id.btnlogout);
+        mAuth = FirebaseAuth.getInstance();
+        currentUserId = mAuth.getCurrentUser().getUid();
+        UsersRef = FirebaseDatabase.getInstance().getReference().child("Users");
 
 
-           UsersRef.child(currentUserId).addValueEventListener(new ValueEventListener() {
-               @Override
-               public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                   if(dataSnapshot.exists()){
-                       if(dataSnapshot.hasChild("fullname")) {
-                           String Fullname = dataSnapshot.child("fullname").getValue().toString();
-                           Name.setText(Fullname);
-
-                       }
-                   }else{
-                       Toast.makeText(HomeActivity.this, "Profile Name not found", Toast.LENGTH_SHORT).show();
-                   }
-               }
-
-               @Override
-               public void onCancelled(@NonNull DatabaseError databaseError) {
-
-               }
-           });
+        Name = (TextView) findViewById((R.id.Txt_Name));
+        Search = (Button) findViewById(R.id.Btn_search);
+        Pages = (Button) findViewById(R.id.btnpages);
+        Home = (Button) findViewById(R.id.btnhome);
+        Profile = (Button) findViewById(R.id.btnprofile);
+        Logout = (Button) findViewById(R.id.btnlogout);
 
 
+        UsersRef.child(currentUserId).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    if (dataSnapshot.hasChild("fullname")) {
+                        String Fullname = dataSnapshot.child("fullname").getValue().toString();
+                        Name.setText(Fullname);
 
-            Search.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    openSearchActivity();
+                    }
+                } else {
+                    Toast.makeText(HomeActivity.this, "Profile Name not found", Toast.LENGTH_SHORT).show();
                 }
-            });
+            }
 
-            Pages.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    openPage1Activity();
-                }
-            });
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            Home.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    openHomeActivity();
-                }
-            });
+            }
+        });
 
-            Profile.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    openProfileActivity();
-                }
-            });
-
-            Logout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    openMainActivity();
-                }
-            });
-
-        }
+}
 
         public void openSearchActivity() {
-            Intent intent = new Intent(this, SearchActivity.class);
+            Intent intent = new Intent(HomeActivity.this, SearchActivity.class);
             startActivity(intent);
         }
 
         public void openPage1Activity() {
-            Intent intent = new Intent(this, Page1Activity.class);
-            startActivity(intent);
-        }
-
-        public void openHomeActivity() {
-            Intent intent = new Intent(this, HomeActivity.class);
+            Intent intent = new Intent(HomeActivity.this, Page1Activity.class);
             startActivity(intent);
         }
 
         public void openProfileActivity() {
-            Intent intent = new Intent(this, ProfileActivity.class);
+            Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
             startActivity(intent);
         }
 
         public void openMainActivity() {
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(HomeActivity.this, MainActivity.class);
             mAuth.signOut();
             startActivity(intent);
+            }
+
         }
 
-    }
+
 
