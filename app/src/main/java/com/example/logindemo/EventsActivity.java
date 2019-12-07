@@ -20,11 +20,11 @@ public class EventsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
 
-        Search = (Button)findViewById(R.id.btnSearch);
+        Search = (Button)findViewById(R.id.Btn_search);
         Pages = (Button)findViewById(R.id.btnpages);
         Home = (Button)findViewById(R.id.btnhome);
         Profile = (Button)findViewById(R.id.btnprofile);
-        Logout = (Button)findViewById(R.id.btn_logout);
+        Logout = (Button)findViewById(R.id.btnlogout);
 
         Search.setOnClickListener(new View.OnClickListener() {
             @Override
