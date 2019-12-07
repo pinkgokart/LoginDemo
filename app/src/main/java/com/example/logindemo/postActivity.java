@@ -19,7 +19,6 @@ public class postActivity extends AppCompatActivity {
     private EditText PostDescription;
 
     private static int Gallery_Pick;
-    private Uri ImageUri;
 
 
     @Override
