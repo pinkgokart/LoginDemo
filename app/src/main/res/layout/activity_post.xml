@@ -84,14 +84,6 @@
         android:layout_marginBottom="0dp"
         android:text="Button" />
 
-    <ImageButton
-        android:id="@+id/Btn_Postimage"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_above="@+id/Btn_Cancel"
-        android:layout_marginBottom="176dp"
-        android:scaleType="fitCenter"
-        app:srcCompat="@android:drawable/ic_menu_report_image" />
 
     <EditText
         android:id="@+id/Text_post"
