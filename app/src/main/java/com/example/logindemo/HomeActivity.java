@@ -15,7 +15,7 @@ public class HomeActivity extends AppCompatActivity {
     private Button Profile;
     private Button Logout;
 
-        @Override
+       @Override
         protected void onCreate (Bundle savedInstanceState){
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_home);
@@ -62,7 +62,6 @@ public class HomeActivity extends AppCompatActivity {
             });
 
         }
-
 
         public void openSearchActivity() {
             Intent intent = new Intent(this, SearchActivity.class);
