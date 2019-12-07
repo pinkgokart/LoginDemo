@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class CreateEventsActivity extends AppCompatActivity {
 
@@ -78,5 +80,22 @@ public class CreateEventsActivity extends AppCompatActivity {
         String date = Date.getText().toString();
         String description = Description.getText().toString();
         String sponsor = Sponsor.getText().toString();
+
+        if(TextUtils.isEmpty(eventname)){
+            Toast.makeText(  this, "Please enter name of event.", Toast.LENGTH_SHORT).show();
+        }else if(TextUtils.isEmpty(location)) {
+            Toast.makeText(this, "Please enter location of event.", Toast.LENGTH_SHORT).show();
+        }else if(TextUtils.isEmpty(starttime)) {
+            Toast.makeText(this, "Please enter a start time of event.", Toast.LENGTH_SHORT).show();
+        }else if(TextUtils.isEmpty(endtime)) {
+            Toast.makeText(this, "Please enter an end time of event.", Toast.LENGTH_SHORT).show();
+        }else if(TextUtils.isEmpty(date)) {
+            Toast.makeText(this, "Please enter date fo event.", Toast.LENGTH_SHORT).show();
+        }else if(TextUtils.isEmpty(description)) {
+            Toast.makeText(this, "Please enter a description of event.", Toast.LENGTH_SHORT).show();
+        }else if(TextUtils.isEmpty(sponsor)) {
+            Toast.makeText(this, "Please enter sponsor of event.", Toast.LENGTH_SHORT).show();
+        }
+
     }
 }
