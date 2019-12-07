@@ -6,12 +6,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class CreateEventsActivity extends AppCompatActivity {
 
     private Button Cancel;
     private Button Create;
     private Button Logout;
+    private EditText EventName;
+    private EditText Location;
+    private EditText StartTime;
+    private EditText EndTime;
+    private EditText Date;
+    private EditText Description;
+    private EditText Sponsor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +29,13 @@ public class CreateEventsActivity extends AppCompatActivity {
         Cancel = (Button)findViewById(R.id.btncancel);
         Create = (Button)findViewById(R.id.btncreate);
         Logout = (Button)findViewById(R.id.btnlogout);
+        EventName = (EditText)findViewById(R.id.etnameevent);
+        Location = (EditText)findViewById(R.id.etlocation);
+        StartTime = (EditText)findViewById(R.id.etstarttime);
+        EndTime = (EditText)findViewById(R.id.etendtime);
+        Date = (EditText)findViewById(R.id.etdate);
+        Description = (EditText)findViewById(R.id.etdescription);
+        Sponsor = (EditText)findViewById(R.id.etsponsor);
 
         Cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,7 +47,7 @@ public class CreateEventsActivity extends AppCompatActivity {
         Create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openEventsActivity();
+                CreateNewEvent();
             }
         });
 
@@ -42,6 +57,7 @@ public class CreateEventsActivity extends AppCompatActivity {
                 openMainActivity();
             }
         });
+
     }
 
     public void openEventsActivity() {
@@ -52,5 +68,15 @@ public class CreateEventsActivity extends AppCompatActivity {
     public void openMainActivity() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+
+    public void CreateNewEvent() {
+        String eventname = EventName.getText().toString();
+        String location = Location.getText().toString();
+        String starttime = StartTime.getText().toString();
+        String endtime = EndTime.getText().toString();
+        String date = Date.getText().toString();
+        String description = Description.getText().toString();
+        String sponsor = Sponsor.getText().toString();
     }
 }
