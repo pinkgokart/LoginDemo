@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         Name =(EditText)findViewById(R.id.login_email);
         Password =(EditText)findViewById(R.id.login_pwd);
-        Info =(TextView)findViewById(R.id.tvInfo);
+        Info =(TextView)findViewById(R.id.Reg_Acc_link);
         Login =(Button)findViewById(R.id.btnLogin);
         loadingbar = new ProgressDialog(this);
 

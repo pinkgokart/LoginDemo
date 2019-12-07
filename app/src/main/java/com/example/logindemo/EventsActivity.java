@@ -20,7 +20,7 @@ public class EventsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_events);
 
-        Search = (Button)findViewById(R.id.btnsearch);
+        Search = (Button)findViewById(R.id.btnSearch);
         Pages = (Button)findViewById(R.id.btnpages);
         Home = (Button)findViewById(R.id.btnhome);
         Profile = (Button)findViewById(R.id.btnprofile);

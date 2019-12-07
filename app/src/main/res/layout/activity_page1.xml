@@ -109,8 +109,8 @@
 
     <Button
         android:id="@+id/btnProfile"
-        android:layout_width="81dp"
-        android:layout_height="70dp"
+        android:layout_width="215px"
+        android:layout_height="wrap_content"
         android:text="Profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -121,8 +121,8 @@
 
     <Button
         android:id="@+id/btnHome"
-        android:layout_width="77dp"
-        android:layout_height="71dp"
+        android:layout_width="215px"
+        android:layout_height="wrap_content"
         android:text="Home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -133,8 +133,8 @@
 
     <Button
         android:id="@+id/btnEvents"
-        android:layout_width="88dp"
-        android:layout_height="70dp"
+        android:layout_width="215px"
+        android:layout_height="wrap_content"
         android:text="Events"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -145,8 +145,8 @@
 
     <Button
         android:id="@+id/btnPages"
-        android:layout_width="81dp"
-        android:layout_height="70dp"
+        android:layout_width="215px"
+        android:layout_height="wrap_content"
         android:text="Pages"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -157,8 +157,8 @@
 
     <Button
         android:id="@+id/btnSearch"
-        android:layout_width="82dp"
-        android:layout_height="69dp"
+        android:layout_width="215px"
+        android:layout_height="wrap_content"
         android:text="Search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

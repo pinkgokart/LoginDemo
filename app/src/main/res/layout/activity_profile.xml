@@ -109,7 +109,7 @@
         tools:srcCompat="@tools:sample/avatars[2]" />
 
     <Button
-        android:id="@+id/btnsearch"
+        android:id="@+id/btncancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#fdca2e"
