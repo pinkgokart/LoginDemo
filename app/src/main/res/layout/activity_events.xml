@@ -346,13 +346,5 @@
         tools:layout_editor_absoluteX="320dp"
         tools:layout_editor_absoluteY="568dp" />
 
-    <Button
-        android:id="@+id/Btn_home"
-        android:layout_width="110dp"
-        android:layout_height="wrap_content"
-        android:text="@string/rsvp2"
-        tools:layout_editor_absoluteX="303dp"
-        tools:layout_editor_absoluteY="587dp" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
