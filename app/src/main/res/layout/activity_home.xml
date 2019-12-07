@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="408dp"
+        android:layout_height="507dp"
+        tools:layout_editor_absoluteY="98dp" />
+
     <TextView
         android:id="@+id/Title"
         android:layout_width="360px"
@@ -137,15 +143,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/Create_Post"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="108dp"
-        android:ellipsize="none"
-        android:text="@string/Btn_CreatePost"
-        app:layout_constraintBottom_toTopOf="@+id/Btn_Pages"
-        app:layout_constraintStart_toStartOf="parent" />
+    <ImageButton
+        android:id="@+id/Btn_Post"
+        android:layout_width="107dp"
+        android:layout_height="68dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/bf_paw"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="514dp"
+        tools:srcCompat="@drawable/bf_paw" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

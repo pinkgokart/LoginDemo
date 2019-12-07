@@ -39,4 +39,8 @@
     <string name="event_date_colon">Date of Event:</string>
     <string name="description">Event Description:</string>
     <string name="sponsor">Sponsor:</string>
+    <string name="syl">SYL</string>
+    <string name="fgk">FGK</string>
+    <string name="kys">KYS</string>
+    <string name="delta_love">DeltaLove</string>
 </resources>
