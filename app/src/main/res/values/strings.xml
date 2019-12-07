@@ -33,4 +33,10 @@
     <string name="rsvp2">RSVP</string>
     <string name="cancel">Cancel</string>
     <string name="create_event">Create Event</string>
+    <string name="event_name_colon">Event Name:</string>
+    <string name="event_local">Location:</string>
+    <string name="event_time_colon">Time of Event:</string>
+    <string name="event_date_colon">Date of Event:</string>
+    <string name="description">Event Description:</string>
+    <string name="sponsor">Sponsor:</string>
 </resources>
