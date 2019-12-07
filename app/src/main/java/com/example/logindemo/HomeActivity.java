@@ -24,7 +24,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private Button Search;
     private Button Pages;
-    private Button Home;
+    private Button Events;
     private Button Profile;
     private Button Logout;
     private ImageButton AddnewPostButton;
@@ -49,10 +49,45 @@ public class HomeActivity extends AppCompatActivity {
         Name = (TextView) findViewById((R.id.Txt_Name));
         Search = (Button) findViewById(R.id.Btn_search);
         Pages = (Button) findViewById(R.id.btnpages);
-        Home = (Button) findViewById(R.id.btnhome);
+        Events = (Button) findViewById(R.id.btnevents);
         Profile = (Button) findViewById(R.id.btnprofile);
         Logout = (Button) findViewById(R.id.btnlogout);
         AddnewPostButton = (ImageButton) findViewById(R.id.Btn_Post);
+
+        Search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openSearchActivity();
+            }
+        });
+
+        Pages.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPage1Activity();
+            }
+        });
+
+        Events.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openEventsActivity();
+            }
+        });
+
+        Profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openProfileActivity();
+            }
+        });
+
+        Logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMainActivity();
+            }
+        });
 
 
 
@@ -100,6 +135,11 @@ public class HomeActivity extends AppCompatActivity {
 
         public void openPage1Activity() {
             Intent intent = new Intent(HomeActivity.this, Page1Activity.class);
+            startActivity(intent);
+        }
+
+        public void openEventsActivity() {
+            Intent intent = new Intent(this, EventsActivity.class);
             startActivity(intent);
         }
 
