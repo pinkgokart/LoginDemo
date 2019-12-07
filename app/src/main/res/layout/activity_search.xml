@@ -136,5 +136,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
+    <view
+        android:id="@+id/viewSearch"
+        class="androidx.appcompat.widget.SearchView"
+        android:layout_width="387dp"
+        android:layout_height="446dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/Btn_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Title" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
