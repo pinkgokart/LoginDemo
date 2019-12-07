@@ -141,9 +141,10 @@
         android:id="@+id/Create_Post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
         android:ellipsize="none"
         android:text="@string/Btn_CreatePost"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="282dp" />
+        app:layout_constraintBottom_toTopOf="@+id/Btn_Pages"
+        app:layout_constraintStart_toStartOf="parent" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

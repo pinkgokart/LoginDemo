@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class HomeActivity extends AppCompatActivity {
 
     private Button Search;
@@ -14,12 +16,15 @@ public class HomeActivity extends AppCompatActivity {
     private Button Home;
     private Button Profile;
     private Button Logout;
+    private FirebaseAuth mAuth;
 
        @Override
         protected void onCreate (Bundle savedInstanceState){
 
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_home);
+
+            mAuth = FirebaseAuth.getInstance();
 
             Search = (Button) findViewById(R.id.Btn_search);
             Pages = (Button) findViewById(R.id.btnpages);
@@ -86,6 +91,7 @@ public class HomeActivity extends AppCompatActivity {
 
         public void openMainActivity() {
             Intent intent = new Intent(this, MainActivity.class);
+            mAuth.signOut();
             startActivity(intent);
         }
 
