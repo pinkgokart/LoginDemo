@@ -46,4 +46,5 @@
     <string name="txtV_suggest">Suggested Pages:</string>
     <string name="txtV_pfollow">Pages You Follow:</string>
     <string name="img_profile" />
+    <string name="txtV_msg">MESSAGES</string>
 </resources>
