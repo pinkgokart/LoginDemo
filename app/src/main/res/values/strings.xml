@@ -10,4 +10,25 @@
     <string name="password">Password:</string>
     <string name="Btn_Post" />
     <string name="Btn_CreatePost">Post</string>
+    <string name="meal_swipes">Meal Swipes:</string>
+    <string name="first_last">First Last</string>
+    <string name="panther_talks">Panther Talks</string>
+    <string name="swipes_left">Swipes Left</string>
+    <string name="dining_dollars">Dining Dollars:</string>
+    <string name="dining_dollars_left">Dining Dollars Left</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="events_timeline">Events Timeline</string>
+    <string name="logout">Logout</string>
+    <string name="today">Today</string>
+    <string name="this_week">This Week</string>
+    <string name="search">Search</string>
+    <string name="pages">Pages</string>
+    <string name="home">Home</string>
+    <string name="events">Events</string>
+    <string name="profile">Profile</string>
+    <string name="event_name">Event Name</string>
+    <string name="date_time2">Date and Time</string>
+    <string name="location">Location</string>
+    <string name="club_name">Club Name</string>
+    <string name="rsvp2">RSVP</string>
 </resources>
