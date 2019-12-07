@@ -144,52 +144,7 @@
         app:layout_constraintStart_toEndOf="@+id/Title"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
-    <TextView
-        android:id="@+id/tvtime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-<<<<<<< HEAD
-        android:text="Name of event: "
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="147dp" />
-=======
-        android:text="@string/event_time_colon"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.118"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.424" />
->>>>>>> 8378b53dabbdaa248936137bef91707bde9f0645
 
-    <TextView
-        android:id="@+id/tveventname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-<<<<<<
-
-    < HEAD
-        android:text="Location:"
-        tools:layout_editor_absoluteX="49dp"
-        tools:layout_editor_absoluteY="220dp"
-        android:id="@+id/" /><![CDATA[
-=======
-        android:text="@string/event_name_colon"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.115"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.259" />
->>>>>>> 8378b53dabbdaa248936137bef91707bde9f0645
-
-
-
-
-
-
-
-    ]]>
 
     <TextView
         android:id="@+id/tvlocal"
@@ -198,12 +153,10 @@
         android:text="@string/event_local"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintHorizontal_bias="0.099"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.29" />
-
-    <<<<<<
+        app:layout_constraintVertical_bias="0.289" />
 
     <Button
         android:id="@+id/btncreate2"
@@ -238,10 +191,10 @@
         android:text="@string/event_date_colon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.57" />
+        app:layout_constraintVertical_bias="0.567" />
 
     <TextView
         android:id="@+id/tvdescription"
@@ -312,7 +265,7 @@
         android:text="End time:"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintHorizontal_bias="0.099"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.475" />
@@ -324,10 +277,10 @@
         android:text="Start time:"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintHorizontal_bias="0.101"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.39" />
+        app:layout_constraintVertical_bias="0.389" />
 
     <CheckBox
         android:id="@+id/cbpmend"
@@ -438,21 +391,5 @@
         app:layout_constraintHorizontal_bias="0.919"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.771" /><![CDATA[
-
-
-
-    >>>>>>> 8378b53dabbdaa248936137bef91707bde9f0645
-
-]]>
-</androidx.constraintlayout.widget.ConstraintLayout><![CDATA[=======
-        android:background="#fdca2e"
-        android:text="@string/cancel"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.136"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.956" />
-
-    ]]>
+        app:layout_constraintVertical_bias="0.771" />
+</androidx.constraintlayout.widget.ConstraintLayout>
