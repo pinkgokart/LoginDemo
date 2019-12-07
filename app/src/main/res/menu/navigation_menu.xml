@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    android:id="@+id/nav_Home"
+    android:title="Home"/>
+    <item
+        android:id="@+id/nav_Pages"
+        android:title="Pages"/>
+    <item
+        android:id="@+id/nav_Search"
+        android:title="Search"/>
+    <item
+        android:id="@+id/nav_Profile"
+        android:title="Profile"/>
+    <item
+        android:id="@+id/nav_Events"
+        android:title="Events"/>
+
+
+</menu>

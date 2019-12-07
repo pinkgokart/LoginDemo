@@ -26,6 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
@@ -91,6 +92,7 @@ public class SetupActivity extends AppCompatActivity {
                 if(dataSnapshot.exists()){
                     String image = dataSnapshot.child("profileimage").getValue().toString();
 
+                    Picasso.with(SetupActivity.this).load(image).placeholder(R.drawable.googleg_standard_color_18).into(ProfileImage);
 
                 }
             }

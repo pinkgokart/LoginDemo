@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void SendUserToHomeActivity() {
         Intent homeIntent = new Intent(this, HomeActivity.class);
-         homeIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        // homeIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(homeIntent);
       //  finish();
     }
