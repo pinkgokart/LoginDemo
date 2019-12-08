@@ -51,17 +51,7 @@ public class HomeActivity extends AppCompatActivity {
     private RecyclerView postlist;
 
     String currentUserId;
-    protected void onStart() {
-        super.onStart();
-        adapter.startListening();
 
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        adapter.stopListening();
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -153,13 +143,13 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        AddnewPostButton.setOnClickListener(new View.OnClickListener() {
+/*        AddnewPostButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SendUserToPost();
             }
         });
-
+*/
 
     }
 
@@ -206,7 +196,6 @@ public class HomeActivity extends AppCompatActivity {
 
         public ViewHolder(View itemView) {
             super(itemView);
-            root = itemView.findViewById(R.id.list_root);
             txtName = itemView.findViewById((R.id.post_user_name));
             txtDate = itemView.findViewById(R.id.post_date);
             txtTime = itemView.findViewById(R.id.post_time);
@@ -277,7 +266,17 @@ public class HomeActivity extends AppCompatActivity {
 
             };
         }
+    protected void onStart() {
+        super.onStart();
+        adapter.startListening();
 
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        adapter.stopListening();
+    }
 
 
 }
