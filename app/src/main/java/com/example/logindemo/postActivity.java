@@ -28,6 +28,7 @@ public class postActivity extends AppCompatActivity {
     private Button Cancel;
    /*private ImageButton SelectPostImage;*/
     private EditText PostDescription;
+    private EditText PostTitle;
     private String description;
     private String saveCurrentDate,saveCurrentTime,postRandomName, current_user_id;
 
@@ -55,6 +56,8 @@ public class postActivity extends AppCompatActivity {
         Cancel = (Button) findViewById(R.id.Btn_Cancel);
        /* SelectPostImage = (ImageButton) findViewById(R.id.Btn_Postimage);*/
         PostDescription = (EditText) findViewById(R.id.Text_post);
+        PostTitle = (EditText) findViewById((R.id.Text_PostTitle))
+
 
         /*SelectPostImage.setOnClickListener(new View.OnClickListener() {
             @Override
