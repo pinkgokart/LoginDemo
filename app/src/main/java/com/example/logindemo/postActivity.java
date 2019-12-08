@@ -1,8 +1,10 @@
 package com.example.logindemo;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,14 +16,20 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
 
 public class postActivity extends AppCompatActivity {
     private Button Create;
@@ -32,8 +40,9 @@ public class postActivity extends AppCompatActivity {
     private String description;
     private String saveCurrentDate,saveCurrentTime,postRandomName, current_user_id;
 
-    private StorageReference Postref;
-    private DatabaseReference Userref;
+    private ProgressDialog loadingbar;
+
+    private DatabaseReference Userref, PostRef;
     private FirebaseAuth mAuth;
 
 
@@ -46,17 +55,17 @@ public class postActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
 
-        Postref = FirebaseStorage.getInstance().getReference();
         Userref = FirebaseDatabase.getInstance().getReference().child("Users");
+        PostRef =  FirebaseDatabase.getInstance().getReference().child("Posts");
 
         mAuth= FirebaseAuth.getInstance();
-        current_user_id= mAuth.getCurrentUser().getUid();
+        current_user_id= mAuth.getCurrentUser().getUid().toString();
 
         Create = (Button) findViewById(R.id.btn_Create);
         Cancel = (Button) findViewById(R.id.Btn_Cancel);
        /* SelectPostImage = (ImageButton) findViewById(R.id.Btn_Postimage);*/
         PostDescription = (EditText) findViewById(R.id.Text_post);
-        PostTitle = (EditText) findViewById((R.id.Text_PostTitle))
+        loadingbar= new ProgressDialog(this);
 
 
         /*SelectPostImage.setOnClickListener(new View.OnClickListener() {
@@ -86,13 +95,16 @@ public class postActivity extends AppCompatActivity {
 
             Toast.makeText(this, "Please Add something", Toast.LENGTH_SHORT).show();
         }else{
+            loadingbar.setTitle("Add New Post");
+            loadingbar.setMessage("Please wait while we are creating your post");
+            loadingbar.show();
             StoringPostToFirebaseStorage();
         }
     }
 
     private void StoringPostToFirebaseStorage() {
         Calendar calFordDate = Calendar.getInstance();
-        SimpleDateFormat currentDate = new SimpleDateFormat("dd-MMMM-yyyy");
+        final SimpleDateFormat currentDate = new SimpleDateFormat("dd-MMMM-yyyy");
         saveCurrentDate = currentDate.format(calFordDate.getTime());
 
         Calendar calFordTime = Calendar.getInstance();
@@ -101,7 +113,47 @@ public class postActivity extends AppCompatActivity {
 
         postRandomName = saveCurrentDate + saveCurrentTime;
 
-        StorageReference filepath;
+        Userref.child(current_user_id).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists()){
+                    String userFullName = dataSnapshot.child("fullname").getValue().toString();
+                   // String UserProfileImg = dataSnapshot.child("profileimage").getValue().toString();
+
+                    HashMap postMap = new HashMap();
+
+                    postMap.put("uid",current_user_id);
+                    postMap.put("Date",saveCurrentDate);
+                    postMap.put("Time",saveCurrentTime);
+                  //  postMap.put("PostTitle",PostTitle);
+                    postMap.put("PostDescrip",description) ;
+                  //  postMap.put("profileImage",UserProfileImg);
+                    postMap.put("fullname",userFullName);
+
+                    PostRef.child(current_user_id+postRandomName).updateChildren(postMap)
+                            .addOnCompleteListener(new OnCompleteListener() {
+                        @Override
+                        public void onComplete(@NonNull Task task) {
+                            if(task.isSuccessful()){
+                                loadingbar.dismiss();
+                                Toast.makeText(postActivity.this, "New post is Posted", Toast.LENGTH_SHORT).show();
+                                SendUsertoHome();
+                            }else{
+                                Toast.makeText(postActivity.this, "Error Occured when updating your post", Toast.LENGTH_SHORT).show();
+                            loadingbar.dismiss();
+                            }
+                        }
+                    });
+
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
 
 
@@ -114,7 +166,12 @@ public class postActivity extends AppCompatActivity {
         galleryIntent.setType("Image/*");
         startActivityForResult(galleryIntent,Gallery_Pick);
     }
+private void SendUsertoHome(){
+        Intent homeIntent = new Intent();
+        startActivity(homeIntent);
 
+
+}
    /* protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 

@@ -54,6 +54,7 @@ public class HomeActivity extends AppCompatActivity {
         Logout = (Button) findViewById(R.id.btnlogout);
         AddnewPostButton = (ImageButton) findViewById(R.id.Btn_Post);
 
+/*
         Search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,7 +89,7 @@ public class HomeActivity extends AppCompatActivity {
                 openMainActivity();
             }
         });
-
+*/
 
 
 
@@ -129,13 +130,13 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void openSearchActivity() {
-            Intent intent = new Intent(HomeActivity.this, SearchActivity.class);
-            startActivity(intent);
+            Intent Searchintent = new Intent(HomeActivity.this, SearchActivity.class);
+            startActivity(Searchintent);
         }
 
         public void openPage1Activity() {
-            Intent intent = new Intent(HomeActivity.this, Page1Activity.class);
-            startActivity(intent);
+            Intent Pageintent = new Intent(HomeActivity.this, Page1Activity.class);
+            startActivity(Pageintent);
         }
 
         public void openEventsActivity() {
@@ -144,14 +145,14 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         public void openProfileActivity() {
-            Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
-            startActivity(intent);
+            Intent Profileintent = new Intent(HomeActivity.this, ProfileActivity.class);
+            startActivity(Profileintent);
         }
 
         public void openMainActivity() {
-            Intent intent = new Intent(HomeActivity.this, MainActivity.class);
-            mAuth.signOut();
-            startActivity(intent);
+            Intent Logoutintent = new Intent(HomeActivity.this, MainActivity.class);
+           // mAuth.signOut();
+            startActivity(Logoutintent);
             }
 
         }
