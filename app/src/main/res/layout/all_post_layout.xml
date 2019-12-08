@@ -86,8 +86,9 @@
         android:layout_marginLeft="3dp"
         android:layout_marginRight="3dp"
         android:padding="5dp"
-        android:textColor="@android:color/black">
-
+        android:textColor="@android:color/black"></TextView>
 </LinearLayout>
 </RelativeLayout>
+
+
 
