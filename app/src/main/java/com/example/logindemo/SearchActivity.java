@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public static final String ACTION_SEARCH {
+/*public static final String ACTION_SEARCH {
 <application ...>
 <activity android:name=".SearchableActivity">
 <intent-filter>
@@ -43,7 +43,7 @@ public class boolean onCreateOptionsMenu(Menu menu) {
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
 
-        return true;
+        return true;*/
 public class SearchActivity extends AppCompatActivity {
 
     private Button Pages;
@@ -51,7 +51,7 @@ public class SearchActivity extends AppCompatActivity {
     private Button Events;
     private Button Profile;
     private Button Logout;
-}
+//}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,4 +126,4 @@ public class SearchActivity extends AppCompatActivity {
     }
 }
 
-}
+//}
