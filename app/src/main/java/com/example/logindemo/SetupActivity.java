@@ -92,7 +92,7 @@ public class SetupActivity extends AppCompatActivity {
                 if(dataSnapshot.exists()){
                     String image = dataSnapshot.child("profileimage").getValue().toString();
 
-                    Picasso.with(SetupActivity.this).load(image).placeholder(R.drawable.googleg_standard_color_18).into(ProfileImage);
+                 //   Picasso.(SetupActivity.this).load(image).placeholder(R.drawable.googleg_standard_color_18).into(ProfileImage);
 
                 }
             }

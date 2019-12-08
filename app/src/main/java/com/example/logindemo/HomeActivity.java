@@ -11,25 +11,17 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextClock;
+
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.firebase.ui.database.SnapshotParser;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
 
 public class HomeActivity extends AppCompatActivity {
@@ -44,8 +36,8 @@ public class HomeActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private DatabaseReference UsersRef;
     private DatabaseReference Postref;
-    private FirebaseRecyclerAdapter adapter;
     private LinearLayoutManager linearLayoutManager;
+    private FirebaseRecyclerAdapter<posts, ViewHolder> adapter;
 
 
     private RecyclerView postlist;
@@ -62,7 +54,6 @@ public class HomeActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         currentUserId = mAuth.getCurrentUser().getUid();
         UsersRef = FirebaseDatabase.getInstance().getReference().child("Users");
-        Postref = FirebaseDatabase.getInstance().getReference().child("Posts");
 
 
         Name = (TextView) findViewById((R.id.Txt_Name));
@@ -71,58 +62,73 @@ public class HomeActivity extends AppCompatActivity {
         Events = (Button) findViewById(R.id.btnevents);
         Profile = (Button) findViewById(R.id.btnprofile);
         Logout = (Button) findViewById(R.id.btnlogout);
-     //   AddnewPostButton = (ImageButton) findViewById(R.id.Btn_Post);
+      //  AddnewPostButton = (ImageButton) findViewById(R.id.Btn_Post);
 
-       postlist = (RecyclerView) findViewById(R.id.all_userpostlist);
-      linearLayoutManager = new LinearLayoutManager(this);
-        postlist.setLayoutManager(linearLayoutManager);
-        postlist.setHasFixedSize(true);
-        fetch();
+        postlist = (RecyclerView) findViewById(R.id.all_userpostlist);
+        postlist.setLayoutManager(new LinearLayoutManager(this));
+
+        AddnewPostButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SendUserToPost();
+            }
+        });
+
+        Postref = FirebaseDatabase.getInstance().getReference().child("Posts");
+        Query query = Postref.child("Posts");
+        final FirebaseRecyclerOptions<posts> firebaseRecyclerOptions = new FirebaseRecyclerOptions.Builder<posts>()
+                .setQuery(query, posts.class).build();
+
+        adapter = new FirebaseRecyclerAdapter<posts, ViewHolder>((firebaseRecyclerOptions)) {
+            @Override
+            protected void onBindViewHolder(@NonNull ViewHolder viewHolder, int i, @NonNull posts posts) {
+
+            }
+
+            @NonNull
+            @Override
+            public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext())
+                        .inflate(R.layout.all_post_layout, parent, false);
+
+                return new ViewHolder(view);
+            }
+
+        };
+        postlist.setAdapter(adapter);
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        private TextView txtName;
+        private TextView txtDate;
+        private TextView txtTime;
+        private TextView txtPostDec;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+            txtName = itemView.findViewById((R.id.post_user_name));
+            txtDate = itemView.findViewById(R.id.post_date);
+            txtTime = itemView.findViewById(R.id.post_time);
+            txtPostDec = itemView.findViewById(R.id.post_description);
+            //  txtTime = itemView.findViewById(R.id.post_profile_image);
+        }
+
+        void setTimePost(posts post) {
+            String date = post.getDate();
+            txtDate.setText((date));
+            String postdescrip = post.getPostdescrip();
+            txtPostDec.setText((postdescrip));
+            String time = post.getTime();
+            txtTime.setText((time));
+            String fullname = post.getFullname();
+            txtName.setText((fullname));
 
 
-
-
-
+        }
+    }
 
 
 /*
-        Search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openSearchActivity();
-            }
-        });
-
-        Pages.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openPage1Activity();
-            }
-        });
-
-        Events.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openEventsActivity();
-            }
-        });
-
-        Profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openProfileActivity();
-            }
-        });
-
-        Logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openMainActivity();
-            }
-        });
-*/
-
-
         UsersRef.child(currentUserId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -142,16 +148,12 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         });
-
-/*        AddnewPostButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SendUserToPost();
-            }
-        });
 */
 
-    }
+
+
+
+
 
 
     private void SendUserToPost() {
@@ -160,112 +162,9 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-    public void openSearchActivity() {
-        Intent Searchintent = new Intent(HomeActivity.this, SearchActivity.class);
-        startActivity(Searchintent);
-    }
-
-    public void openPage1Activity() {
-        Intent Pageintent = new Intent(HomeActivity.this, Page1Activity.class);
-        startActivity(Pageintent);
-    }
-
-    public void openEventsActivity() {
-        Intent intent = new Intent(this, EventsActivity.class);
-        startActivity(intent);
-    }
-
-    public void openProfileActivity() {
-        Intent Profileintent = new Intent(HomeActivity.this, ProfileActivity.class);
-        startActivity(Profileintent);
-    }
-
-    public void openMainActivity() {
-        Intent Logoutintent = new Intent(HomeActivity.this, MainActivity.class);
-        // mAuth.signOut();
-        startActivity(Logoutintent);
-    }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        public LinearLayout root;
-        public TextView txtName;
-        public TextView txtDate;
-        public TextView txtTime;
-        public TextView txtPostDec;
-
-        public ViewHolder(View itemView) {
-            super(itemView);
-            txtName = itemView.findViewById((R.id.post_user_name));
-            txtDate = itemView.findViewById(R.id.post_date);
-            txtTime = itemView.findViewById(R.id.post_time);
-            txtPostDec = itemView.findViewById(R.id.post_description);
-            //  txtTime = itemView.findViewById(R.id.post_profile_image);
-        }
-
-        public void settxtName(String string) {
-            txtName.setText(string);
-        }
-
-
-        public void settxtDate(String string) {
-            txtDate.setText(string);
-        }
-
-        public void settxtTime(String string) {
-            txtTime.setText(string);
-        }
-
-        public void settxtPostDec(String string) {
-            txtPostDec.setText(string);
-        }
-    }
-
-        private void fetch() {
-            Query query = FirebaseDatabase.getInstance()
-                    .getReference()
-                    .child("Posts");
-
-            FirebaseRecyclerOptions<posts> options =
-                    new FirebaseRecyclerOptions.Builder<posts>()
-                            .setQuery(query, new SnapshotParser<posts>() {
-                                @NonNull
-                                @Override
-                                public posts parseSnapshot(@NonNull DataSnapshot snapshot) {
-                                    return new posts(snapshot.child("date").getValue().toString(), snapshot.child("postdescrip").getValue().toString(), snapshot.child("time").getValue().toString()
-                                            , snapshot.child("fullname").getValue().toString(), snapshot.child("uid").getValue().toString());
-                                }
-                            })
-                            .build();
-
-            adapter = new FirebaseRecyclerAdapter<posts, ViewHolder>(options) {
-                @Override
-                public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-                    View view = LayoutInflater.from(parent.getContext())
-                            .inflate(R.layout.all_post_layout, parent, false);
-
-                    return new ViewHolder(view);
-                }
-
-
-                @Override
-                protected void onBindViewHolder(ViewHolder holder, final int position, posts model) {
-                    holder.settxtDate(model.getDate());
-                    holder.settxtTime(model.getTime());
-                    holder.settxtName(model.getFullname());
-                    holder.settxtPostDec(model.getPostdescrip());
-
-
-                    holder.root.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Toast.makeText(HomeActivity.this, String.valueOf(position), Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                }
-
-            };
-        }
+    @Override
     protected void onStart() {
         super.onStart();
         adapter.startListening();
