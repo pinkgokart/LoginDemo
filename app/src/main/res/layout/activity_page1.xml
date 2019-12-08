@@ -19,6 +19,7 @@
         android:shadowColor="#FFFFFF"
         android:text="@string/panther_talks"
         android:textAlignment="center"
+        android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/Btn_home"
         app:layout_constraintStart_toEndOf="@+id/Txt_Name"
@@ -27,6 +28,7 @@
 
     <Button
         android:id="@+id/Btn_search"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="85dp"
         android:layout_height="51dp"
         android:layout_alignParentStart="true"
@@ -39,11 +41,10 @@
         android:text="@string/search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.585"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Title"
-        app:layout_constraintVertical_bias="1.0"
-        style="?android:attr/borderlessButtonStyle"/>
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/Btn_home"
@@ -75,6 +76,7 @@
         android:gravity="center"
         android:text="@string/first_last"
         android:textAlignment="center"
+        android:textColor="#000000"
         android:textDirection="ltr"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -93,8 +95,10 @@
         android:text="@string/profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.752"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/Btn_Pages"
@@ -105,8 +109,8 @@
         android:text="@string/pages"
         android:textColor="#FDCA2E"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/Btn_search"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.26"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
@@ -136,7 +140,10 @@
         android:text="@string/events"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Btn_Profile" />
+        app:layout_constraintHorizontal_bias="0.766"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/txtUser4"
@@ -259,6 +266,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="295dp"
         android:text="@string/txtV_suggest"
+        android:textColor="#000000"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -272,6 +280,7 @@
         android:layout_marginTop="18dp"
         android:layout_marginEnd="292dp"
         android:text="@string/txtV_pfollow"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Txt_Name" />

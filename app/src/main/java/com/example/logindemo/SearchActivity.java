@@ -2,7 +2,10 @@ package com.example.logindemo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public static final String ACTION_SEARCH {
 <application ...>
@@ -43,10 +46,84 @@ public class boolean onCreateOptionsMenu(Menu menu) {
         return true;
 public class SearchActivity extends AppCompatActivity {
 
+    private Button Pages;
+    private Button Home;
+    private Button Events;
+    private Button Profile;
+    private Button Logout;
+}
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
+        Pages = (Button)findViewById(R.id.Btn_Pages);
+        Home = (Button)findViewById(R.id.Btn_home);
+        Events = (Button)findViewById(R.id.Btn_Events);
+        Profile = (Button)findViewById(R.id.Btn_Profile);
+        Logout = (Button)findViewById(R.id.Btn_logout);
+
+        Pages.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openPage1Activity();
+            }
+        });
+
+        Home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openHomeActivity();
+            }
+        });
+
+        Events.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openEventsActivity();
+            }
+        });
+
+        Profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openProfileActivity();
+            }
+        });
+
+        Logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMainActivity();
+            }
+        });
     }
+
+    public void openPage1Activity() {
+        Intent intent = new Intent(this, Page1Activity.class);
+        startActivity(intent);
+    }
+
+    public void openHomeActivity() {
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+    }
+
+    public void openEventsActivity() {
+        Intent intent = new Intent(this, EventsActivity.class);
+        startActivity(intent);
+    }
+
+    public void openProfileActivity() {
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+
+    public void openMainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+}
 
 }
