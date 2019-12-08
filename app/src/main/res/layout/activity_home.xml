@@ -10,7 +10,12 @@
         android:id="@+id/view"
         android:layout_width="408dp"
         android:layout_height="507dp"
-        tools:layout_editor_absoluteY="98dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.657" />
 
     <TextView
         android:id="@+id/Title"
@@ -25,6 +30,7 @@
         android:shadowColor="#FFFFFF"
         android:text="@string/panther_talks"
         android:textAlignment="center"
+        android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/Btn_home"
         app:layout_constraintStart_toEndOf="@+id/Txt_Name"
@@ -33,6 +39,7 @@
 
     <Button
         android:id="@+id/Btn_search"
+        style="?android:attr/borderlessButtonStyle"
         android:layout_width="85dp"
         android:layout_height="51dp"
         android:layout_alignParentStart="true"
@@ -45,11 +52,10 @@
         android:text="@string/search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.585"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Title"
-        app:layout_constraintVertical_bias="1.0"
-        style="?android:attr/borderlessButtonStyle"/>
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/Btn_home"
@@ -80,6 +86,7 @@
         android:gravity="center"
         android:text="@string/first_last"
         android:textAlignment="center"
+        android:textColor="#000000"
         android:textDirection="ltr"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -118,15 +125,14 @@
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="216px"
         android:layout_height="51dp"
-        android:layout_marginTop="582dp"
         android:background="#FDCA2E"
         android:text="@string/pages"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/Btn_search"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.258"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Txt_Name"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/Btn_logout"
@@ -148,9 +154,13 @@
         android:layout_width="107dp"
         android:layout_height="68dp"
         android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.849"
         app:srcCompat="@drawable/bf_paw"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="514dp"
         tools:srcCompat="@drawable/bf_paw" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

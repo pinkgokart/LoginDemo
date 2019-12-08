@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(  this, "please write your Password....", Toast.LENGTH_SHORT).show();
         }else{
             loadingbar.setTitle("Login");
-            loadingbar.setMessage("Please wait, While we are Logging you in");
+            loadingbar.setMessage("Please wait while we are Logging you in");
             loadingbar.show();
             loadingbar.setCanceledOnTouchOutside(true);
 
