@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -31,7 +32,7 @@ public class HomeActivity extends AppCompatActivity {
     private Button Events;
     private Button Profile;
     private Button Logout;
-    private ImageButton AddnewPostButton;
+    private FloatingActionButton AddnewPostButton;
     private TextView Name;
     private FirebaseAuth mAuth;
     private DatabaseReference UsersRef;
@@ -57,22 +58,19 @@ public class HomeActivity extends AppCompatActivity {
 
 
         Name = (TextView) findViewById((R.id.Txt_Name));
-        Search = (Button) findViewById(R.id.Btn_search);
-        Pages = (Button) findViewById(R.id.btnpages);
-        Events = (Button) findViewById(R.id.btnevents);
-        Profile = (Button) findViewById(R.id.btnprofile);
-        Logout = (Button) findViewById(R.id.btnlogout);
-      //  AddnewPostButton = (ImageButton) findViewById(R.id.Btn_Post);
 
-        postlist = (RecyclerView) findViewById(R.id.all_userpostlist);
+       AddnewPostButton = (FloatingActionButton) findViewById(R.id.Btn_post);
+
+        postlist = (RecyclerView) findViewById(R.id.postcontainer);
         postlist.setLayoutManager(new LinearLayoutManager(this));
 
-        AddnewPostButton.setOnClickListener(new View.OnClickListener() {
+/*        AddnewPostButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SendUserToPost();
             }
-        });
+        });*/
+
 
         Postref = FirebaseDatabase.getInstance().getReference().child("Posts");
         Query query = Postref.child("Posts");
@@ -96,36 +94,10 @@ public class HomeActivity extends AppCompatActivity {
 
         };
         postlist.setAdapter(adapter);
+
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView txtName;
-        private TextView txtDate;
-        private TextView txtTime;
-        private TextView txtPostDec;
 
-        public ViewHolder(View itemView) {
-            super(itemView);
-            txtName = itemView.findViewById((R.id.post_user_name));
-            txtDate = itemView.findViewById(R.id.post_date);
-            txtTime = itemView.findViewById(R.id.post_time);
-            txtPostDec = itemView.findViewById(R.id.post_description);
-            //  txtTime = itemView.findViewById(R.id.post_profile_image);
-        }
-
-        void setTimePost(posts post) {
-            String date = post.getDate();
-            txtDate.setText((date));
-            String postdescrip = post.getPostdescrip();
-            txtPostDec.setText((postdescrip));
-            String time = post.getTime();
-            txtTime.setText((time));
-            String fullname = post.getFullname();
-            txtName.setText((fullname));
-
-
-        }
-    }
 
 
 /*
