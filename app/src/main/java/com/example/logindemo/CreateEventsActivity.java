@@ -36,6 +36,8 @@ public class CreateEventsActivity extends AppCompatActivity {
     private EditText EndTime;
     private EditText Date;
     private EditText Description;
+    private String eventname,location,starttime,endtime,date,description,sponsor;
+
     private EditText Sponsor;
     private String saveCurrentTime, saveCurrentDate, postRandomName, current_user_id;
     private DatabaseReference Userref, Eventref;
@@ -63,13 +65,15 @@ public class CreateEventsActivity extends AppCompatActivity {
         Date = (EditText)findViewById(R.id.etdate);
         Description = (EditText)findViewById(R.id.etdescription);
         Sponsor = (EditText)findViewById(R.id.etsponsor);
+        loadingbar = new ProgressDialog(this);
 
-        Cancel.setOnClickListener(new View.OnClickListener() {
+        /*Cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openEventsActivity();
             }
-        });
+        });*/
+
 
         Create.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,13 +81,13 @@ public class CreateEventsActivity extends AppCompatActivity {
                 CreateNewEvent();
             }
         });
-
+/*
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openMainActivity();
             }
-        });
+        });*/
 
     }
 
@@ -98,13 +102,13 @@ public class CreateEventsActivity extends AppCompatActivity {
     }
 
     public void CreateNewEvent() {
-        String eventname = EventName.getText().toString();
-        String location = Location.getText().toString();
-        String starttime = StartTime.getText().toString();
-        String endtime = EndTime.getText().toString();
-        String date = Date.getText().toString();
-        String description = Description.getText().toString();
-        String sponsor = Sponsor.getText().toString();
+         eventname = EventName.getText().toString();
+         location = Location.getText().toString();
+         starttime = StartTime.getText().toString();
+         endtime = EndTime.getText().toString();
+         date = Date.getText().toString();
+         description = Description.getText().toString();
+         sponsor = Sponsor.getText().toString();
 
         if(TextUtils.isEmpty(eventname)){
             Toast.makeText(  this, "Please enter name of event.", Toast.LENGTH_SHORT).show();
@@ -146,13 +150,13 @@ public class CreateEventsActivity extends AppCompatActivity {
                     HashMap eventMap = new HashMap();
 
                     eventMap.put("uid",current_user_id);
-                    eventMap.put("Event Name", EventName);
-                    eventMap.put("Location", Location);
-                    eventMap.put("Start Time", StartTime);
-                    eventMap.put("End Time", EndTime);
-                    eventMap.put("Date", Date);
-                    eventMap.put("Description", Description);
-                    eventMap.put("Sponsor", Sponsor);
+                    eventMap.put("Event Name", eventname);
+                    eventMap.put("Location", location);
+                    eventMap.put("Start Time", starttime);
+                    eventMap.put("End Time", endtime);
+                    eventMap.put("Date", date);
+                    eventMap.put("Description", description);
+                    eventMap.put("Sponsor", sponsor);
 
                     Eventref.child(current_user_id+postRandomName).updateChildren(eventMap)
                             .addOnCompleteListener(new OnCompleteListener() {
