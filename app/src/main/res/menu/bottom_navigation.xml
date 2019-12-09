@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_search"
+        android:title="@string/search"
+        android:icon="@drawable/bf_paw"
+        />
+
+    <item
+        android:id="@+id/nav_pages"
+        android:icon="@drawable/bf_paw"
+        android:title="@string/pages"
+
+
+        />
+    <item
+        android:id="@+id/nav_home"
+        android:title="@string/home"
+        android:icon="@drawable/bf_paw"
+        />
+    <item
+        android:id="@+id/nav_events"
+        android:title="@string/events"
+        android:icon="@drawable/bf_paw"
+        />
+    <item
+        android:id="@+id/nav_profile"
+        android:title="@string/profile"
+        android:icon="@drawable/bf_paw"
+        />
+</menu>

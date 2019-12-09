@@ -1,11 +1,11 @@
 package com.example.logindemo;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class EventsActivity extends AppCompatActivity {
 
@@ -29,6 +29,7 @@ public class EventsActivity extends AppCompatActivity {
         Logout = (Button)findViewById(R.id.btnlogout);
         Cancel = (Button)findViewById(R.id.btncancel);
         Create = (Button)findViewById(R.id.btncreate);
+        /*
 
         Search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,15 +37,19 @@ public class EventsActivity extends AppCompatActivity {
                 openSearchActivity();
             }
         });
+        */
 
-        Pages.setOnClickListener(new View.OnClickListener() {
+
+/*        Pages.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openPage1Activity();
             }
         });
 
-        Home.setOnClickListener(new View.OnClickListener() {
+ */
+
+/*        Home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openHomeActivity();
@@ -70,7 +75,7 @@ public class EventsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 openEventsActivity();
             }
-        });
+        }); */
 
         Create.setOnClickListener(new View.OnClickListener() {
             @Override
